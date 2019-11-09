@@ -1,0 +1,36 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\daMaker\.yarn\bin\yarn.js init
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\daMaker\bin;C:\Users\daMaker\AppData\Local\Yarn\Data\global\node_modules\.bin;C:\Users\daMaker\AppData\Local\Yarn\Data\global;C:\msys64\mingw64\bin;C:\msys64\mingw32\bin;C:\Windows\system32;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Python37\Scripts;C:\Python37;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\PuTTY;C:\Program Files\Git\cmd;C:\LLVM\bin;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\gccarm\arm-none-eabi\bin;C:\stlink-1.3.0-win64\bin;C:\Users\daMaker\adb-tools\platform-tools;C:\OpenSSH\bin;C:\Users\daMaker\.yarn\bin;C:\Graphviz238\bin;C:\Program Files\nodejs\node_modules\npm\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit;C:\nvm;C:\Program Files\nodejs;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;C:\gccarm\bin;C:\Users\daMaker\AppData\Local\Microsoft\WindowsApps;C:\Users\daMaker\AppData\Local\Programs\Microsoft VS Code\bin;C:\nvm;C:\Program Files\nodejs;C:\Users\daMaker\AppData\Local\Programs\Microsoft VS Code Insiders\bin;C:\webstorm\bin;C:\Users\daMaker\AppData\Local\Polycom\RealPresence Desktop
+
+Yarn version: 
+  1.19.0
+
+Node version: 
+  10.15.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (C:\Users\daMaker\.yarn\lib\cli.js:136799:13)
+      at Interface.emit (events.js:189:13)
+      at Interface._ttyWrite (readline.js:783:16)
+      at ReadStream.onkeypress (readline.js:168:10)
+      at ReadStream.emit (events.js:189:13)
+      at emitKeys (internal/readline.js:424:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1022:36)
+      at ReadStream.emit (events.js:189:13)
+      at addChunk (_stream_readable.js:284:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
