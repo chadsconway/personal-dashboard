@@ -7,8 +7,17 @@
 		<% include ../partials/header %>
 		<main>
 			<div class="jumbotron">
-				<h1>Personal Dashboard</h1>
-				<p>Welcom to Chad Conway's Personal Dash...</p>
+				<h1>Drinks</h1>
+				<p>Passing in single variable tagline below:</p>
+				<p><%= tagline %></p>
+			</div>
+			<div>
+				<h3>Looping over data:</h3>
+				<ul>
+					<% drinks.forEach(function(drink) { %>
+					<li><%= drink.name %> - <%= drink.drunkness %></li>
+					<% }); %>
+				</ul>
 			</div>
 		</main>
 		<footer>

@@ -1,5 +1,73 @@
 const express = require('express');
 const mysql = require('mysql');
+//-----------devHutSolutions Code Below------------------------
+const path = require('path');
+const bodyParser = require('body-parser');
+const PORT = 3500;
+//-----------devHutSolutions Code Above------------------------
+
+//-----------attributions - notes -------------------------
+
+//------------devHutSolutions Code Below-------------------
+//------------devHutSolutions Code Above-------------------
+
+const app = express();
+//-------------------Traversy Tutorial Above---------------
+//------------devHutSolutions Code Below-------------------
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/public', express.static(path.join(__dirname, 'public')));
+//------------devHutSolutions Code Above-------------------
+
+//------------------EJS scotch.io tutorial below-----------
+
+// set view engine to ejs
+app.set('view engine', 'ejs');
+
+// use res.render to load up an ejs view file
+
+// index page
+app.get('/', (req, res) => {
+	res.render('pages/index');
+});
+
+// about page
+app.get('/about', (req, res) => {
+	res.render('pages/about');
+});
+
+// drinks page - passing data in
+app.get('/drinks', function(req, res) {
+	var drinks = [
+		{ name: 'Bloody Mary', drunkness: 3 },
+		{ name: 'Martini', drunkness: 5 },
+		{ name: 'Scotch', drunkness: 10 }
+	];
+	var tagline =
+		"Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.";
+
+	res.render('pages/drinks', {
+		drinks: drinks,
+		tagline: tagline
+	});
+});
+
+//-----------------EJS soctch.io tutorial above----------
+//--------------------------------------------------------
+//------------devHutSolutions Code Below-------------------
+app.get('/grid', (req, res, next) => {
+	res.render('pages/mygridster');
+});
+
+app.get('/edit', (req, res, next) => {
+	res.render('/pages/edit');
+});
+
+app.get('/tables', (req, res) => {
+	res.render('pages/tables');
+});
+//------------devHutSolutions Code Above-------------------
+//-------------Traversy Tutorial Below
 
 // create mysql connection
 const db = mysql.createConnection({
@@ -16,8 +84,6 @@ db.connect(err => {
 	}
 	console.log('mysql connected ..');
 });
-
-const app = express();
 
 // Create db
 app.get('/createdb', (req, res) => {
@@ -114,6 +180,6 @@ app.get('/deletepost/:id', (req, res) => {
 	});
 });
 
-app.listen('3500', () => {
-	console.log('server started on port 3500');
+app.listen(PORT, () => {
+	console.log(`server started on port ${PORT}`);
 });
