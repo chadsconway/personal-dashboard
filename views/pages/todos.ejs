@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<% include ../partials/head %> <% include ../partials/bootstrapcss %>
+		<% include ../partials/head %>
 	</head>
-	<body>
+	<body onload="loadToDos()">
 		<% include ../partials/header %>
 		<main>
 			<div class="jumbotron">
-				<h1>Personal Dashboard</h1>
-				<p>Welcom to Chad Conway's Personal Dash...</p>
+				<h1>Todo Lists</h1>
 			</div>
+			<% include ../partials/todotable %>
 		</main>
 		<footer>
 			<% include ../partials/footer %>
 		</footer>
-		<% include ../partials/bootstrapjs %>
 	</body>
 </html>
