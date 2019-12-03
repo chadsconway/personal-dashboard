@@ -3,11 +3,12 @@
 	<head>
 		<% include ../partials/head %>
 	</head>
-	<body>
+	<body onload="getTheme()">
 		<% include ../partials/header %>
 		<main>
-			<div class="jumbotron">
-				<h1>Grid</h1>
+			<div class="jumbotron bg-dark text-light">
+				<h1>A Drag-n-Drop Grid</h1>
+				<h2>Implemented with jQuery plugin Gridstacker</h2>
 			</div>
 
 			<div id="grid1">

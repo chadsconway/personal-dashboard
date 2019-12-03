@@ -3,11 +3,15 @@
 	<head>
 		<% include ../partials/head %>
 	</head>
-	<body onload="loadToDos()">
+	<body onload="loadToDos(); getTheme();">
 		<% include ../partials/header %>
 		<main>
-			<div class="jumbotron">
+			<div class="jumbotron bg-dark text-light">
 				<h1>Todo Lists</h1>
+				<h3>
+					Description: The ever-popular ToDo List <br />
+					Todos are saved, deleted, and added using a mysql database
+				</h3>
 			</div>
 			<% include ../partials/todotable %>
 		</main>

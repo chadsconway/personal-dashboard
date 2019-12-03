@@ -6,6 +6,11 @@ router.get('/', (req, res) => {
 	res.render('pages/index');
 });
 
+// themes page
+router.get('/themes', (req, res) => {
+	res.render('pages/themes');
+});
+
 // about page
 router.get('/about', (req, res) => {
 	res.render('pages/about');

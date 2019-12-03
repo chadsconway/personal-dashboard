@@ -3,14 +3,44 @@
 	<head>
 		<% include ../partials/head %>
 	</head>
-	<body>
+	<body onload="getTheme()">
 		<% include ../partials/header %>
 		<main>
-			<div class="jumbotron">
-				<h1>Personal Dashboard</h1>
-				<p>Welcom to Chad Conway's Personal Dash...</p>
+			<div class="jumbotron bg-dark text-light">
+				<h1>Chad Conway</h1>
+				<h2>Portfolio Homepage</h2>
 			</div>
 		</main>
+		<div class="container">
+			<h1 class="display-4">Welcome to Chad Conway's Portfolio Website</h1>
+			<p class="lead">
+				I completed my Master's of Science in Software Engineering in March of
+				2019.
+			</p>
+			<p>
+				I feel technology and the many benefits and enhancements it provides
+				should be accessible to all and I strongly support open-source software.
+				All of my code is available through my github account
+				<a href="https://github.com/chadsconway">here.</a>
+			</p>
+			<p>
+				All my software is licensed under the GPL v3.
+			</p>
+			<p>
+				I am a full-stack web applications developer, currently leaning towards
+				client-side and frontend development.
+			</p>
+			<p>
+				The Internet-of-Things is one of my greatest interests. Many of my
+				projects are embedded software built with C++, FreeRTOS, and the
+				libopencm3 libraries. The majority of the hardware I use utilizes ARM
+				cortext microchips embedded in STMicroelectronics microcontrollers such
+				as the STM32f1xx, STM32f3xx, STM32f4xx and STM32f7xx. Another MCU I
+				favor is the Espressif line of chips, I have developed quite a few
+				projects with the NodeMCU boards which use their esp8266 and esp32e
+				chips.
+			</p>
+		</div>
 		<footer>
 			<% include ../partials/footer %>
 		</footer>

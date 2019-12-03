@@ -1,0 +1,50 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include ../partials/head %>
+	</head>
+	<body onload="getTheme()">
+		<% include ../partials/header %>
+
+		<main>
+			<div class="jumbotron">
+				<h1>Select a Theme</h1>
+				<h4>This will update colors on all pages</h4>
+				<h4 class="ml-3">
+					Current Theme:
+					<span id="curr-theme" class="text-primary">Cerulean</span>
+				</h4>
+			</div>
+
+			<% include ../partials/nestedcolumnsthemes %>
+		</main>
+
+		<footer>
+			<% include ../partials/footer %>
+		</footer>
+	</body>
+	<style>
+		.spacer {
+			height: 100px;
+		}
+		.themebtn {
+			font-size: 1.5em;
+			width: 100%;
+			color: #fff;
+		}
+		.flex-item {
+			font-size: 2em;
+			flex-grow: 1;
+			width: 100%;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-bottom: 10px;
+		}
+		#sample-filled-buttons #sample-outline-buttons {
+			display: flex;
+			flex-direction: column;
+		}
+	</style>
+</html>

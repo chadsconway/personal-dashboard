@@ -2,8 +2,6 @@ jQuery(document).ready(function($) {
 	$.ajaxSetup({
 		cache: false
 	});
-	// $.getJSON(
-	// 	'https://bootswatch.com/api/3.json?format=json&jsoncallback=?',
 
 	function loadThemes() {
 		var jsondata = {
@@ -249,69 +247,136 @@ jQuery(document).ready(function($) {
 				}
 			]
 		};
-
 		return jsondata;
 	}
 	function displayThemes(jsondata) {
 		var themes = jsondata.themes;
-		console.log('Number of themes: ', themes.length);
-		var select = $('#sel');
-		select.show();
-		$('.alert').toggleClass('alert-info alert-success');
-		$('.alert h4').text('Success!');
+		var numthemespercol = (themes.length / 3).toFixed(0);
+		var numthemescol1 = numthemespercol;
+		var numthemescol2 = numthemespercol;
+		var numthemescol3 = numthemespercol;
+		var nummodulothemes = themes.length % 3;
+		if (nummodulothemes === 1) {
+			numthemescol1++;
+		} else if (nummodulothemes === 2) {
+			numthemescol1++;
+			numthemescol2++;
+		}
 
-		themes.forEach(function(value, index) {
-			select.append(
-				$('<option />')
-					.val(index)
-					.text(value.name)
+		var themescol1 = themes.splice(0, numthemescol1);
+		var themescol2 = themes.splice(0, numthemescol2);
+		var themescol3 = themes.splice(0, numthemescol3);
+
+		themescol1.forEach(function(value, index) {
+			$('#first-col').append(
+				`<div class="btn btn-block themebtn" id="${value.name}">${value.name}</div>`
+			);
+		});
+		themescol2.forEach(function(value, index) {
+			$('#second-col').append(
+				`<div class="btn btn-block themebtn" id="col1-${index}">${value.name}</div>`
+			);
+		});
+		themescol3.forEach(function(value, index) {
+			$('#third-col').append(
+				`<div class="btn btn-block themebtn" id="col1-${index}">${value.name}</div>`
 			);
 		});
 
-		select
-			.change(function() {
-				var theme = themes[$(this).val()];
-				console.log('selected theme = ', theme);
-				$('#themelink').attr('href', theme.css);
-				$('h1').text(theme.name);
-			})
-			.change();
+		// for nested columns partial
+		themescol1.forEach(function(value, index) {
+			$('#nested-first-col').append(
+				`<div class="btn btn-block themebtn" id="${value.name}">${value.name}</div>`
+			);
+		});
+		themescol2.forEach(function(value, index) {
+			$('#nested-second-col').append(
+				`<div class="btn btn-block themebtn" id="${value.name}">${value.name}</div>`
+			);
+		});
+		themescol3.forEach(function(value, index) {
+			$('#nested-third-col').append(
+				`<div class="btn btn-block themebtn" id="${value.name}">${value.name}</div>`
+			);
+		});
 	}
+
+	function postTheme(themecss, themename) {
+		$.ajax({
+			type: 'POST',
+			url: 'http://localhost:3500/api/theme',
+			data: {
+				themecss: themecss,
+				themename: themename
+			},
+			success: function(data) {
+				console.log('Success');
+			},
+			error: function(jqXHR, status, err) {
+				alert('Theme update failed with error: ' + error);
+			}
+		});
+	}
+
+	// var select = $('#sel');
+	// select.show();
+	// $('.alert').toggleClass('alert-info alert-success');
+	// $('.alert h4').text('Success!');
+	// select
+	// 	.change(function() {
+	// 		var theme = themes[$(this).val()];
+	// 		console.log('selected theme = ', theme);
+	// 		$('#themelink').attr('href', theme.css);
+	// 		$('h1').text(theme.name);
+	// 	})
+	// 	.change();
 
 	var jsondata = loadThemes();
 	displayThemes(jsondata);
 
-	// 	'json'
-	// ).fail(function() {
-	// 	$('.alert').toggleClass('alert-info alert-danger');
-	// 	$('.alert h4').text('Failure!');
-	// });
+	$('.themebtn').click(function(event) {
+		var buttonid = $(this).attr('id');
+		var jsondata = loadThemes();
+		var themes = jsondata.themes;
+		var themecss = '';
+		themes.forEach(function(value, index) {
+			if (value.name === buttonid) {
+				themecss = value.css;
+			}
+		});
+		$('#themelink').attr('href', themecss);
+		$('#curr-theme').text(buttonid);
+		$('#curr-theme-navbar').text(buttonid);
+		postTheme(themecss, buttonid);
+	});
+
+	$('.themebtn').css({ 'background-color': '#000000' });
+	$('.dropdown').hover(
+		function() {
+			$('#dropdown-div').show(1000);
+		},
+		function() {
+			$('#dropdown-div').hide(1000);
+		}
+	);
+	$('.themebtn').hover(
+		function() {
+			$(this).css({
+				'background-color': '#101010'
+			});
+		},
+		function() {
+			$(this).css({
+				'background-color': '#000000'
+			});
+		}
+	);
 });
-
-// function populateSelect() {
-// 	// CREATE AN XMLHttpRequest OBJECT, WITH GET METHOD.
-// 	var xhr = new XMLHttpRequest(),
-// 		method = 'GET',
-// 		overrideMimeType = 'application/json',
-// 		url = '../json/themes.json'; // ADD THE URL OF THE FILE.
-
-// 	xhr.onreadystatechange = function() {
-// 		if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-// 			// PARSE JSON DATA.
-// 			var myThemes = JSON.parse(xhr.responseText);
-
-// 			var ele = document.getElementById('sel');
-// 			for (var i = 0; i < myThemes.length; i++) {
-// 				// BIND DATA TO <select> ELEMENT.
-// 				ele.innerHTML =
-// 					ele.innerHTML +
-// 					'<option value="' +
-// 					myThemes[i].name +
-// 					'">' +
-// 					'</option>';
-// 			}
-// 		}
-// 	};
-// 	xhr.open(method, url, true);
-// 	xhr.send();
-// }
+// $('#dropdown-div').hover(
+// 	function() {
+// 		$('#dropdown-div').show();
+// 	},
+// 	function() {
+// 		$('#dropdown-div').hide();
+// 	}
+// );

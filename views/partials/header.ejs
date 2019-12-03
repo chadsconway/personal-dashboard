@@ -1,7 +1,9 @@
 <!-- views/partials/header.ejs -->
 
-<nav class="navbar navbar-expand-lg navbar-dark">
-	<a class="navbar-brand" href="http://devhut.solutions">devHut.Solutions</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<a class="navbar-brand nav-link" href="http://www.chadsconway.info"
+		>CSConway</a
+	>
 	<button
 		class="navbar-toggler"
 		type="button"
@@ -16,50 +18,56 @@
 
 	<div class="collapse navbar-collapse" id="navbarColor01">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/"
 					>Home <span class="sr-only">(current)</span></a
 				>
 			</li>
-			<li class="nav-item">
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/todo">ToDo</a>
 			</li>
-			<li class="nav-item">
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/grid">Grid</a>
 			</li>
-			<li class="nav-item">
-				<div class="dropdown">
-					<button class="dropbtn">
-						Theme Selector <i class="fa fa-caret-down"></i>
-					</button>
-					<div class="dropdown-content">
-						<div class="header"><h2>Themes:</h2></div>
-						<div class="row">
-							<div class="column">
-								<a id="sel"></a>
-							</div>
-						</div>
-					</div>
-				</div>
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/themes">Themes</a>
 			</li>
-			<li class="nav-item">
+
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/tables">Tables</a>
 			</li>
-			<li class="nav-item">
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/drinks">Drinks</a>
 			</li>
-			<li class="nav-item">
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/about">About</a>
 			</li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search" />
-		</form>
+		<text id="nav-theme"
+			>Current Theme: <span id="curr-theme-navbar">Base</span></text
+		>
 	</div>
 </nav>
 <style>
+	.navbar-brand {
+		font-size: 2em;
+		font-weight: bold;
+		color: white;
+	}
+	#nav-theme {
+		font-size: 2em;
+		color: white;
+	}
+	nav {
+		background-color: primary;
+	}
 	a {
 		font-size: 2em;
+	}
+	.nav-link {
+		text-decoration: none;
+	}
+	document {
+		z-index: 0;
 	}
 </style>
