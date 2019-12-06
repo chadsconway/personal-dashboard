@@ -12,3 +12,4 @@ debianpkg/
 .postinst
 geo.mmdb
 ARCHIVE.mysqlroutes.js
+.env
