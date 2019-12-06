@@ -32,6 +32,7 @@ app.use('/', (req, res, next) => {
 	console.log('count= ' + app.locals.count);
 	console.log('Request received');
 	// console.log(req);
+	res.locals.count = app.locals.count;
 
 	next();
 });

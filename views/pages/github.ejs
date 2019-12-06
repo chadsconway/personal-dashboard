@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include ../partials/head %>
+
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+		<script
+			src="https://kit.fontawesome.com/195084fcd7.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body onload="getTheme()">
+		<% include ../partials/header %>
+
+		<main>
+			<div class="jumbotron bg-dark text-light">
+				<h1>GitHub Pages - Repositories</h1>
+				<h3>
+					The following iFrames are several of my Github repositories
+					implemented as static webpages using Github Pages.
+				</h3>
+				<h3>
+					To view my Github profile and code click
+					<a href="https://www.github.com/chadsconway">Here</a>
+				</h3>
+			</div>
+
+			<% include ../partials/github-visuals %>
+		</main>
+
+		<footer>
+			<% include ../partials/footer %>
+		</footer>
+		<script src="public/js/delay-load.js"></script>
+		<script>
+			delayLoad();
+		</script>
+	</body>
+</html>

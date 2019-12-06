@@ -7,11 +7,16 @@ jQuery(document).ready(function($) {
 		var jsondata = {
 			themes: [
 				{
+					name: 'Base (default)',
+					description: '',
+					css: 'public/css/bootstrap.css'
+				},
+				{
 					name: 'Cerulean',
 					description: 'A calm blue sky',
 					thumbnail: 'https://bootswatch.com/3/cerulean/thumbnail.png',
 					preview: 'https://bootswatch.com/3/cerulean/',
-					css: 'public/css/cerulean.css',
+					css: 'public/themes/cerulean.css',
 					cssMin: 'https://bootswatch.com/3/cerulean/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css',
@@ -25,7 +30,7 @@ jQuery(document).ready(function($) {
 					description: 'An ode to Metro',
 					thumbnail: 'https://bootswatch.com/3/cosmo/thumbnail.png',
 					preview: 'https://bootswatch.com/3/cosmo/',
-					css: 'public/css/cosmo.css',
+					css: 'public/themes/cosmo.css',
 					cssMin: 'https://bootswatch.com/3/cosmo/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css',
@@ -39,7 +44,7 @@ jQuery(document).ready(function($) {
 					description: 'Jet black and electric blue',
 					thumbnail: 'https://bootswatch.com/3/cyborg/thumbnail.png',
 					preview: 'https://bootswatch.com/3/cyborg/',
-					css: 'public/css/cyborg.css',
+					css: 'public/themes/cyborg.css',
 					cssMin: 'https://bootswatch.com/3/cyborg/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css',
@@ -53,7 +58,7 @@ jQuery(document).ready(function($) {
 					description: 'Flatly in night mode',
 					thumbnail: 'https://bootswatch.com/3/darkly/thumbnail.png',
 					preview: 'https://bootswatch.com/3/darkly/',
-					css: 'public/css/darkly.css',
+					css: 'public/themes/darkly.css',
 					cssMin: 'https://bootswatch.com/3/darkly/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css',
@@ -67,7 +72,7 @@ jQuery(document).ready(function($) {
 					description: 'Flat and modern',
 					thumbnail: 'https://bootswatch.com/3/flatly/thumbnail.png',
 					preview: 'https://bootswatch.com/3/flatly/',
-					css: 'public/css/flatly.css',
+					css: 'public/themes/flatly.css',
 					cssMin: 'https://bootswatch.com/3/flatly/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css',
@@ -81,7 +86,7 @@ jQuery(document).ready(function($) {
 					description: 'Crisp like a new sheet of paper',
 					thumbnail: 'https://bootswatch.com/3/journal/thumbnail.png',
 					preview: 'https://bootswatch.com/3/journal/',
-					css: 'public/css/journal.css',
+					css: 'public/themes/journal.css',
 					cssMin: 'https://bootswatch.com/3/journal/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css',
@@ -95,7 +100,7 @@ jQuery(document).ready(function($) {
 					description: 'Light and shadow',
 					thumbnail: 'https://bootswatch.com/3/lumen/thumbnail.png',
 					preview: 'https://bootswatch.com/3/lumen/',
-					css: 'public/css/lumen.css',
+					css: 'public/themes/lumen.css',
 					cssMin: 'https://bootswatch.com/3/lumen/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css',
@@ -109,7 +114,7 @@ jQuery(document).ready(function($) {
 					description: 'Material is the metaphor',
 					thumbnail: 'https://bootswatch.com/3/paper/thumbnail.png',
 					preview: 'https://bootswatch.com/3/paper/',
-					css: 'public/css/pulse.css',
+					css: 'public/themes/pulse.css',
 					cssMin: 'https://bootswatch.com/3/paper/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css',
@@ -123,7 +128,7 @@ jQuery(document).ready(function($) {
 					description: 'Optimized for legibility',
 					thumbnail: 'https://bootswatch.com/3/readable/thumbnail.png',
 					preview: 'https://bootswatch.com/3/readable/',
-					css: 'public/css/litera.css',
+					css: 'public/themes/litera.css',
 					cssMin: 'https://bootswatch.com/3/readable/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css',
@@ -137,7 +142,7 @@ jQuery(document).ready(function($) {
 					description: 'A touch of warmth',
 					thumbnail: 'https://bootswatch.com/3/sandstone/thumbnail.png',
 					preview: 'https://bootswatch.com/3/sandstone/',
-					css: 'public/css/sandstone.css',
+					css: 'public/themes/sandstone.css',
 					cssMin: 'https://bootswatch.com/3/sandstone/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css',
@@ -151,7 +156,7 @@ jQuery(document).ready(function($) {
 					description: 'Mini and minimalist',
 					thumbnail: 'https://bootswatch.com/3/simplex/thumbnail.png',
 					preview: 'https://bootswatch.com/3/simplex/',
-					css: 'public/css/sketchy.css',
+					css: 'public/themes/sketchy.css',
 					cssMin: 'https://bootswatch.com/3/simplex/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/simplex/bootstrap.min.css',
@@ -165,7 +170,7 @@ jQuery(document).ready(function($) {
 					description: 'Shades of gunmetal gray',
 					thumbnail: 'https://bootswatch.com/3/slate/thumbnail.png',
 					preview: 'https://bootswatch.com/3/slate/',
-					css: 'public/css/slate.css',
+					css: 'public/themes/slate.css',
 					cssMin: 'https://bootswatch.com/3/slate/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css',
@@ -179,7 +184,7 @@ jQuery(document).ready(function($) {
 					description: 'Silvery and sleek',
 					thumbnail: 'https://bootswatch.com/3/spacelab/thumbnail.png',
 					preview: 'https://bootswatch.com/3/spacelab/',
-					css: 'public/css/spacelab.css',
+					css: 'public/themes/spacelab.css',
 					cssMin: 'https://bootswatch.com/3/spacelab/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css',
@@ -193,7 +198,7 @@ jQuery(document).ready(function($) {
 					description: 'The brave and the blue',
 					thumbnail: 'https://bootswatch.com/3/superhero/thumbnail.png',
 					preview: 'https://bootswatch.com/3/superhero/',
-					css: 'public/css/superhero.css',
+					css: 'public/themes/superhero.css',
 					cssMin: 'https://bootswatch.com/3/superhero/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css',
@@ -207,7 +212,7 @@ jQuery(document).ready(function($) {
 					description: 'Ubuntu orange and unique font',
 					thumbnail: 'https://bootswatch.com/3/united/thumbnail.png',
 					preview: 'https://bootswatch.com/3/united/',
-					css: 'public/css/united.css',
+					css: 'public/themes/united.css',
 					cssMin: 'https://bootswatch.com/3/united/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css',
@@ -221,7 +226,7 @@ jQuery(document).ready(function($) {
 					description: 'A friendly foundation',
 					thumbnail: 'https://bootswatch.com/3/yeti/thumbnail.png',
 					preview: 'https://bootswatch.com/3/yeti/',
-					css: 'public/css/yeti.css',
+					css: 'public/themes/yeti.css',
 					cssMin: 'https://bootswatch.com/3/yeti/bootstrap.min.css',
 					cssCdn:
 						'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css',
@@ -233,17 +238,17 @@ jQuery(document).ready(function($) {
 				{
 					name: 'Tycoon',
 					description: '',
-					css: 'public/css/tycoon.css'
+					css: 'public/themes/tycoon.css'
 				},
 				{
 					name: 'Sea',
 					description: '',
-					css: 'public/css/sea.css'
+					css: 'public/themes/sea.css'
 				},
 				{
 					name: 'Executive',
 					description: '',
-					css: 'public/css/executive.css'
+					css: 'public/themes/executive.css'
 				}
 			]
 		};

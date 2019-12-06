@@ -48,4 +48,8 @@ router.get('/todo', (req, res, next) => {
 	res.render('pages/todos');
 });
 
+router.get('/github', (req, res, next) => {
+	res.render('pages/github');
+});
+
 module.exports = router;

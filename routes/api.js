@@ -3,14 +3,26 @@ const app = require('../app.js');
 const router = express.Router();
 const mysql = require('mysql');
 const session = require('express-session');
-
+const dbtouse = process.env.DATABASE;
+let options = {};
+console.log(dbtouse);
+if (dbtouse === 'digitalOcean') {
+	// add the password
+	options = {
+		host: 'localhost',
+		user: 'root',
+		password: 'csc1009',
+		database: 'dashboard'
+	};
+} else if (dbtouse === 'daMaker') {
+	options = {
+		host: 'localhost',
+		user: 'root',
+		database: 'dashboard'
+	};
+}
 // create mysql connection
-const db = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	// password: '123456'
-	database: 'dashboard'
-});
+const db = mysql.createConnection(options);
 
 // route: '/api/theme'
 // router.get('/theme/:themename', (req, res, next) => {
@@ -140,10 +152,10 @@ router.get('/gettheme', (req, res) => {
 			secret: 'session_cookie_secret',
 			resave: false,
 			saveUnintialized: false,
-			selectedthemecss: 'public/bootstrap.css',
+			selectedthemecss: 'public/css/bootstrap.css',
 			selectedthemename: 'base'
 		});
-		app.locals.themecss = 'public/bootstrap.css';
+		app.locals.themecss = 'public/css/bootstrap.css';
 		app.locals.themename = 'base';
 		res.json({
 			themecss: app.locals.themecss,

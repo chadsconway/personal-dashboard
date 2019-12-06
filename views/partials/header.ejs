@@ -1,6 +1,6 @@
 <!-- views/partials/header.ejs -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div class="jumbotron" id="topbanner"></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary position-sticky">
 	<a class="navbar-brand nav-link" href="http://www.chadsconway.info"
 		>CSConway</a
 	>
@@ -24,13 +24,18 @@
 				>
 			</li>
 			<li class="bg-primary text-light nav-item">
+				<a class="nav-link" href="/themes">Themes</a>
+			</li>
+			<li class="bg-primary text-light nav-item">
+				<a class="nav-link" href="/github">GitHub Repos</a>
+			</li>
+
+			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/todo">ToDo</a>
 			</li>
+
 			<li class="bg-primary text-light nav-item">
 				<a class="nav-link" href="/grid">Grid</a>
-			</li>
-			<li class="bg-primary text-light nav-item">
-				<a class="nav-link" href="/themes">Themes</a>
 			</li>
 
 			<li class="bg-primary text-light nav-item">
@@ -55,19 +60,19 @@
 		color: white;
 	}
 	#nav-theme {
-		font-size: 2em;
+		font-size: 1.5em;
 		color: white;
 	}
 	nav {
 		background-color: primary;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
 	}
 	a {
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 	.nav-link {
 		text-decoration: none;
-	}
-	document {
-		z-index: 0;
 	}
 </style>
