@@ -10,7 +10,7 @@ if (dbtouse === 'digitalOcean') {
 	// add the password
 	options = {
 		host: 'localhost',
-		user: 'root',
+		user: 'personal-dashboard',
 		password: 'csc1009',
 		database: 'dashboard'
 	};
