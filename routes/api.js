@@ -3,13 +3,13 @@ const app = require('../app.js');
 const router = express.Router();
 const mysql = require('mysql');
 const session = require('express-session');
-const dbtouse = process.env.DATABASE;
+const dbtouse = 'digitalOcean';
 let options = {};
 console.log(dbtouse);
 if (dbtouse === 'digitalOcean') {
 	// add the password
 	options = {
-		host: 'localhost',
+		host: '127.0.0.1',
 		user: 'personal-dashboard',
 		password: 'csc1009',
 		database: 'dashboard'
@@ -78,8 +78,9 @@ router.get('/createtodostable', (req, res) => {
  * Add todo
  */
 router.post('/addtodo', (req, res) => {
+	console.log(req.body.task);
 	let todo = {
-		complete: req.body.complete,
+		complete: 0,
 		task: req.body.task
 	};
 	let sql = 'INSERT INTO todos SET ?';

@@ -2,7 +2,7 @@ function getTheme() {
 	console.log('getTheme() has been called');
 	$.ajax({
 		type: 'GET',
-		url: 'http://localhost:3500/api/gettheme',
+		url: 'https://chadsconway.info/api/gettheme',
 		success: function(data) {
 			if (data.themename === undefined) {
 				console.log('Themename undefined, using Base');

@@ -21,7 +21,7 @@ app.use(
 		key: session.id,
 		secret: 'session_cookie_secret',
 		resave: false,
-		saveUnintialized: false,
+		saveUninitialized: false,
 		selectedthemecss: '/public/bootstrap.css',
 		selectedthemename: 'base'
 	})

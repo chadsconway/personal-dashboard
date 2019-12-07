@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3500/api/addtodo',
+			url: 'https://chadsconway.info/api/addtodo',
 			data: formData,
 			dataType: 'json'
 		}).done(function(data) {
@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
 function loadToDos() {
 	$.ajax({
 		type: 'GET',
-		url: 'http://localhost:3500/api/gettodos',
+		url: 'https://chadsconway.info/api/gettodos',
 		dataType: 'json'
 	}).done(function(data) {
 		for (var i = 0; i < data.length; i++) {
@@ -50,7 +50,7 @@ function loadToDos() {
 function deleteTodo(id) {
 	$.ajax({
 		type: 'GET',
-		url: `http://localhost:3500/api/deletetodo/${id}`,
+		url: `https://chadsconway.info/api/deletetodo/${id}`,
 		dataType: 'json'
 	})
 		.done(function(data) {
