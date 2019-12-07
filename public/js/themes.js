@@ -309,7 +309,7 @@ jQuery(document).ready(function($) {
 	function postTheme(themecss, themename) {
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3500/api/theme',
+			url: 'https://chadsconway.info/api/theme',
 			data: {
 				themecss: themecss,
 				themename: themename
