@@ -1,5 +1,5 @@
 function getTheme() {
-	console.log('getTheme() has been called');
+	console.log('getTheme() fired');
 	$.ajax({
 		type: 'GET',
 		url: 'https://chadsconway.info/api/gettheme',

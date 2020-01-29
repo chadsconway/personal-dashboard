@@ -18,5 +18,11 @@
 		<footer>
 			<% include ../partials/footer %>
 		</footer>
+		<!-- Load Bootstrapjs - Once when index loads -->
+		<% include ../partials/bootstrapjs %>
+		<!-- Load Public Files - Once when index loads -->
+		<% include ../partials/dashboardlinks.ejs %>
+		<!-- Window.onload event -->
+		<% include ../partials/onloaded.ejs %>
 	</body>
 </html>

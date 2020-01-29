@@ -1,12 +1,16 @@
+require('dotenv').config();
+const database = process.env.DATABASE;
+const themeurl = process.env.URLFORGETTHEME;
 const express = require('express');
 const app = require('../app.js');
 const router = express.Router();
 const mysql = require('mysql');
 const session = require('express-session');
-const dbtouse = 'digitalOcean';
+// const database = 'digitalOcean';
+const errorhelper = require('../errorhelper');
 let options = {};
-console.log(dbtouse);
-if (dbtouse === 'digitalOcean') {
+console.log(database);
+if (database === 'digitalOcean') {
 	// add the password
 	options = {
 		host: '127.0.0.1',
@@ -14,7 +18,7 @@ if (dbtouse === 'digitalOcean') {
 		password: 'csc1009',
 		database: 'dashboard'
 	};
-} else if (dbtouse === 'daMaker') {
+} else if (database === 'daMaker') {
 	options = {
 		host: 'localhost',
 		user: 'root',
@@ -33,7 +37,7 @@ const db = mysql.createConnection(options);
 // connect
 db.connect(err => {
 	if (err) {
-		throw err;
+		errorhelper.mysql(err);
 	}
 	console.log('mysql connected ..');
 });

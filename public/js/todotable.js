@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function($) {
 	console.log('jQuery ready fired');
 
 	$('form').submit(function(event) {
